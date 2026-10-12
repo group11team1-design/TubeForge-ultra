@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TubeForge — Video Downloader</title><link rel="stylesheet" href="/static/style.css"><script src="/config.js"></script><script defer src="/static/app.js"></script></head>
+<body><main class="shell"><header class="topbar"><div class="brand">TF</div><div><h1>TubeForge</h1><p>Video and audio downloads</p></div><span class="pill">FFmpeg enabled</span></header>
+<section class="hero"><p class="eyebrow">YOUR MEDIA WORKSPACE</p><h2>Bring your video.<br><span>We'll forge the file.</span></h2>
+<p class="sub">Analyze a public video, choose a quality, and download a merged file when hosting limits allow.</p>
+<form id="analyze-form"><label for="video-url">Video URL</label><div class="url-row"><input id="video-url" type="url" placeholder="Paste a video URL…" required><button id="analyze-button">Analyze</button></div></form>
+<p id="status" class="status" role="status">Ready when you are.</p></section>
+<section id="result" class="result hidden"><img id="thumbnail" alt="Video thumbnail"><div class="details"><p class="eyebrow">VIDEO DETAILS</p><h3 id="title">—</h3><p id="meta"></p>
+<div class="controls"><label>Type<select id="format"><option value="video">Video (MP4)</option><option value="audio">Audio (MP3)</option></select></label><label id="quality-wrap">Quality<select id="quality"><option value="best">Best available</option></select></label></div>
+<button id="download-button" class="download" type="button">Download file</button></div></section>
+<aside class="notice"><strong>Vercel limitation</strong><p>FFmpeg can merge separate streams, but serverless execution time, temporary storage, deployment package size, and response limits can prevent larger downloads. YouTube may require verification for some videos; this app does not use personal browser cookies or bypass access controls.</p></aside><footer>TubeForge · Flask + yt-dlp + FFmpeg</footer></main></body></html>
